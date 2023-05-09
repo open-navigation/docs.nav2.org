@@ -22,3 +22,4 @@ Navigation2 Tutorials
    docs/adding_smoother.rst
    docs/using_collision_monitor.rst
    docs/adding_a_nav2_task_server.rst
+   docs/route_graph_generation.rst
