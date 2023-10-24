@@ -229,7 +229,7 @@ Observation sources parameters
   ============== =============================
 
   Description:
-    Type of polygon shape. Could be ``scan``, ``pointcloud`` or ``range``.
+    Type of polygon shape. Could be ``scan``, ``pointcloud``, ``range`` or ``polygon``.
 
 :``<source name>``.topic:
 
@@ -274,6 +274,17 @@ Observation sources parameters
 
   Description:
     Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for ``range`` type.
+
+:``<source name>``.sampling_distance:
+
+  ============== =============================
+  Type           Default
+  -------------- -----------------------------
+  double         0.1
+  ============== =============================
+
+  Description:
+    Internally the polygon is sampled for collision detection. sampling_distance is the distance between sampled points of the polygon. Applicable for ``polygon`` type.
 
 :``<source name>``.enabled:
 

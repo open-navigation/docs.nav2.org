@@ -118,3 +118,8 @@ The costmap activation fails when required transforms are not available
 
 In this `PR #3866 <https://github.com/ros-planning/navigation2/pull/3866>`_ the parameter ``initial_transform_timeout`` is added to the costmap. The activation of the costmap now fails,
 if the transformation from the robot base frame to the global frame does not become available during this timeout.
+
+Publishing of collision points in collision monitor/detector for debugging purposes
+***********************************************************************************
+
+In this `PR #3879 <https://github.com/ros-planning/navigation2/pull/3879>`_ the publishing of the collision points that will be considered by the configured polygons was added
