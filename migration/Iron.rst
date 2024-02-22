@@ -146,7 +146,7 @@ New features ``allow_primitive_interpolation`` which allows for more primitives 
 New node in nav2_collision_monitor: Collision Detector
 ******************************************************
 
-In this `PR #3693 <https://github.com/ros-planning/navigation2/pull/3500>`_ A new node was introduced in the nav2_collision_monitor: Collision Detector. 
+In this `PR #3500 <https://github.com/ros-planning/navigation2/pull/3500>`_ A new node was introduced in the nav2_collision_monitor: Collision Detector. 
 It works similarly to the Collision Monitor, but does not affect the robot's velocity. It will only inform that data from the configured sources has been detected within the configured polygons via message to the ``collision_detector_state`` topic that might be used by any external module (e.g. switching LED or sound alarm in case of collision).
 
 Dynamic enabling/disabling of sources/polygons in Collision Monitor/Detector
@@ -254,3 +254,16 @@ In the GIF, it can be seen that there are two controller_ids namely, `FollowPath
 In this case, the `FollowPath` is the default controller_id. The difference between the two controller_ids is that HighSpeedFollowPath has a higher max velocity compared to the FollowPath. This difference can be well noted in the GIF.
 
 .. attention:: If a server is unavailable, then the combo box or the drop down list of the particular component will be empty.
+
+Vector Objects were Supported for Raster Maps
+*********************************************
+
+`PR #3930 <https://github.com/ros-planning/navigation2/pull/3930>`_ adds new Vector Object server into ``nav2_map_server`` package.
+It reads vector objects (polygons and polygonal chains as ``PolygonObject.msg``; and circles as ``CircleObject.msg``) from input parameters, handles them by service calls (``AddShapes.srv``/``GetShapes.srv``/``RemoveShapes.srv``) and finally puts them on output raster OccupancyGrid map.
+This map is typically used with costmaps by acting as an input mask for Costmap Filters.
+This allows to cover such use-cases as:
+adding virtual obstacles on maps, dynamic objects simulation/highlighting, hiding some areas or sticking-out robot parts, sensors noise removal, blacking-out areas on maps, adding keep-out or maximum speed restricted areas on vector basis, synthetic testing purposes, and much more.
+
+To run Vector Object server a new ``vector_object_server.launch.py`` launch-file is being supplied.
+:ref:`navigation2_with_vector_objects` tutorial explains how launch Vector Object server and navigate with vector objects added to raster costmaps.
+The information about Vector Object server parameters set-up could be found at :ref:`configuring_vector_object_server` configuration guide.

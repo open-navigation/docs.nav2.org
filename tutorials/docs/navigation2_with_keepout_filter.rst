@@ -284,7 +284,7 @@ After Costmap Filter Info Publisher Server and Map Server were launched and Keep
 
 .. code-block:: bash
 
-  ros2 launch nav2_bringup tb3_simulation_launch.py
+  ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
 
 And check that filter is working properly as in the pictures below (first picture shows keepout filter enabled for the global costmap, second - differently-sized ``keepout_mask.pgm`` filter mask):
 

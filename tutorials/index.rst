@@ -26,3 +26,4 @@ Navigation2 Tutorials
    docs/get_backtrace.rst
    docs/get_profile.rst
    docs/docker_dev.rst
+   docs/navigation2_with_vector_objects.rst

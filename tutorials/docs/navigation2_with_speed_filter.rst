@@ -296,7 +296,7 @@ After Costmap Filter Info Publisher Server and Map Server were launched and Spee
 
 .. code-block:: bash
 
-  ros2 launch nav2_bringup tb3_simulation_launch.py
+  ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
 
 For better visualization of speed filter mask, in RViz in the left ``Displays`` pane unfold ``Map`` and change ``Topic`` from ``/map`` -> to ``/speed_filter_mask``.
 Set the goal behind the speed restriction areas and check that the filter is working properly: robot should slow down when going through a speed restricting areas. Below is how it might look (first picture shows speed filter enabled for the global costmap, second - ``speed_mask.pgm`` filter mask):
