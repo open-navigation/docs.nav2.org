@@ -1,9 +1,9 @@
-breathe==4.28.0
-docutils==0.14
+breathe
+docutils
 jinja2==3.0.3
-myst-parser==1.0.0
+myst-parser
 sphinx_copybutton==0.5.2
 sphinx_rtd_theme
 sphinx-autobuild
-sphinx==3.5.0
+sphinx
 sphinxcontrib-plantuml
